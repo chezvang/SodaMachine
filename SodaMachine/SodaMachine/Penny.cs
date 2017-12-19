@@ -17,6 +17,11 @@ namespace SodaMachine
             return penny;
         }
 
+        public void AddPenny()
+        {
+            penny = penny + 1;
+        }
+
         public void SubtractPenny()
         {
             penny = penny - 1;

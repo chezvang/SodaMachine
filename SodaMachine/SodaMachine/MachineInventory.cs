@@ -17,15 +17,19 @@ namespace SodaMachine
         public int dime = 10;
         public int quarter = 20;
 
-        public int Grape = 1;
-        public int Orange = 1;
-        public int Lemon = 1;
+        public int grape = 1;
+        public int orange = 1;
+        public int lemon = 1;
 
         public void SubtractPenny()
         {
             penny = penny - 1;
         }
 
+        public void SubtractGrape()
+        {
+            grape = grape - 1;
+        }
 
     }
 }

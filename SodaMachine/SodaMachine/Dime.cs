@@ -16,6 +16,11 @@ namespace SodaMachine
             return dime;
         }
 
+        public void AddDime()
+        {
+            dime = dime + 1;
+        }
+
         public void SubtractDime()
         {
             dime = dime - 1;

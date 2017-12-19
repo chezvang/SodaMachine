@@ -16,6 +16,11 @@ namespace SodaMachine
             return quarter;
         }
 
+        public void AddQuarter()
+        {
+            quarter = quarter + 1;
+        }
+
         public void SubtractQuarter()
         {
             quarter = quarter - 1;

@@ -13,22 +13,26 @@ namespace SodaMachine
         Nickel nickel = new Nickel();
         Penny penny = new Penny();
         Prompt prompt = new Prompt();
+        MachineInventory inventory = new MachineInventory();
 
         double cost;
         double amount;
         double change;
+        double changeCoin;
+
+        string sodaChoice;
 
         public void MenuPrompt()
         {
             Console.WriteLine("What would you like?");
             Console.WriteLine("\nGrape $0.60 \nOrange $0.35 \nLemon $0.06\n");
-            string choice = Console.ReadLine();
-            Menu(choice);
+            sodaChoice = Console.ReadLine();
+            Menu(sodaChoice);
         }
 
-        public void Menu(string choice)
+        public void Menu(string sodaChoice)
         {
-            switch (choice)
+            switch (sodaChoice)
             {
                 case "Grape":
                     Console.WriteLine("Please insert 60 cents");
@@ -108,16 +112,35 @@ namespace SodaMachine
                 change = amount - cost;
                 Console.WriteLine("Your change is: " + change);
                 DispenseChange(change);
+                Console.WriteLine("Enjoy your " + sodaChoice + "!");
             }
             else
             {
-                Console.WriteLine("\nExact price detected. Enjoy your day!");
+                Console.WriteLine("\nExact price detected. Enjoy your " + sodaChoice + "!");
             }
         }
 
         public void DispenseChange(double change)
         {
-            
+            changeCoin = change;
+            CoinCheck(changeCoin);
+        }
+
+        public void CoinCheck(double changeCoin)
+        {
+            if(changeCoin < change)
+            {
+                changeCoin += quarter.QuarterValue();
+                quarter.SubtractQuarter();
+                if(changeCoin > change)
+                {
+                    changeCoin -= quarter.QuarterValue();
+                    quarter.
+
+                    changeCoin += dime.DimeValue();
+                    dime.SubtractDime();
+                }
+            }
         }
 
         public void ActivateSodaMachine()

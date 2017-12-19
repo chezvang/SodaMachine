@@ -16,6 +16,11 @@ namespace SodaMachine
             return nickel;
         }
 
+        public void AddNickel()
+        {
+            nickel = nickel + 1;
+        }
+
         public void SubtractNickel()
         {
             nickel = nickel - 1;
