@@ -20,5 +20,13 @@ namespace SodaMachine
             Console.Clear();
             Console.WriteLine("\nTotal Entered: " + amount);
         }
+
+        public void CoinReturn(int quarter, int dime, int nickel, int penny)
+        {
+            Console.WriteLine("Your change in quarters are: " + quarter + " quarters");
+            Console.WriteLine("Your change in dimes are: " + dime + " dimes");
+            Console.WriteLine("Your change in nickels are: " + nickel + " nickels");
+            Console.WriteLine("Your change in pennies are: " + penny + " penny");
+        }
     }
 }

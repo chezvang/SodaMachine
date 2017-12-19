@@ -22,6 +22,11 @@ namespace SodaMachine
 
         string sodaChoice;
 
+        int quarterCoin;
+        int dimeCoin;
+        int nickelCoin;
+        int pennyCoin;
+
         public void MenuPrompt()
         {
             Console.WriteLine("What would you like?");
@@ -112,7 +117,8 @@ namespace SodaMachine
                 change = amount - cost;
                 Console.WriteLine("Your change is: " + change);
                 DispenseChange(change);
-                Console.WriteLine("Enjoy your " + sodaChoice + "!");
+                prompt.CoinReturn(quarterCoin, dimeCoin, nickelCoin, pennyCoin);
+                Console.WriteLine("Enjoy your " + sodaChoice + " soda!");
             }
             else
             {
@@ -128,17 +134,43 @@ namespace SodaMachine
 
         public void CoinCheck(double changeCoin)
         {
-            if(changeCoin < change)
+            while(changeCoin < cost)
             {
                 changeCoin += quarter.QuarterValue();
                 quarter.SubtractQuarter();
-                if(changeCoin > change)
+                quarterCoin++;
+                if(changeCoin > cost)
                 {
+                    quarterCoin--;
                     changeCoin -= quarter.QuarterValue();
-                    quarter.
+                    quarter.AddQuarter();
 
                     changeCoin += dime.DimeValue();
                     dime.SubtractDime();
+                    dimeCoin++;
+                    if(changeCoin > cost)
+                    {
+                        dimeCoin--;
+                        changeCoin -= dime.DimeValue();
+                        dime.AddDime();
+
+                        changeCoin += nickel.NickelValue();
+                        nickel.SubtractNickel();
+                        nickelCoin++;
+                        if (changeCoin > cost)
+                        {
+                            nickelCoin--;
+                            changeCoin -= nickel.NickelValue();
+                            nickel.SubtractNickel();
+                            if (changeCoin > cost)
+                            {
+                                changeCoin += penny.PennyValue();
+                                penny.SubtractPenny();
+                                pennyCoin++;
+                            }
+
+                        }
+                    }
                 }
             }
         }
