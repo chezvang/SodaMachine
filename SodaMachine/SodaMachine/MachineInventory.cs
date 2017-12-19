@@ -8,23 +8,9 @@ namespace SodaMachine
 {
     class MachineInventory
     {
-        //Penny penny = new Penny();
-        //Dime dime = new Dime();
-        //Nickel nickel = new Nickel();
-        //Quarter quarter = new Quarter();
-        public int penny = 50;
-        public int nickel = 20;
-        public int dime = 10;
-        public int quarter = 20;
-
         public int grape = 1;
         public int orange = 1;
         public int lemon = 1;
-
-        public void SubtractPenny()
-        {
-            penny = penny - 1;
-        }
 
         public void SubtractGrape()
         {
