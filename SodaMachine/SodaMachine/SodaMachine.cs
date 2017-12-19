@@ -107,6 +107,7 @@ namespace SodaMachine
             {
                 change = amount - cost;
                 Console.WriteLine("Your change is: " + change);
+                DispenseChange(change);
             }
             else
             {
@@ -114,7 +115,7 @@ namespace SodaMachine
             }
         }
 
-        public void DispenseChange()
+        public void DispenseChange(double change)
         {
             
         }
@@ -124,7 +125,6 @@ namespace SodaMachine
             MenuPrompt();
             InsertCoins();
             CheckChange();
-            DispenseChange();
         }
     }
 }

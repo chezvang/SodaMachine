@@ -8,11 +8,17 @@ namespace SodaMachine
 {
     class Dime
     {
+        public int dime = 10;
 
         public double DimeValue()
         {
             double dime = .10;
             return dime;
+        }
+
+        public void SubtractDime()
+        {
+            dime = dime - 1;
         }
     }
 }

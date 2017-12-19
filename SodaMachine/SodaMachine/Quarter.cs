@@ -8,10 +8,17 @@ namespace SodaMachine
 {
     class Quarter
     {
+        public int quarter = 20;
+
         public double QuarterValue()
         {
             double quarter = .25;
             return quarter;
+        }
+
+        public void SubtractQuarter()
+        {
+            quarter = quarter - 1;
         }
     }
 }
