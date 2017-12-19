@@ -1,0 +1,6 @@
+C:\Users\Chez\Desktop\CSharp\SodaMachine\SodaMachine\SodaMachine\bin\Debug\SodaMachine.exe.config
+C:\Users\Chez\Desktop\CSharp\SodaMachine\SodaMachine\SodaMachine\bin\Debug\SodaMachine.exe
+C:\Users\Chez\Desktop\CSharp\SodaMachine\SodaMachine\SodaMachine\bin\Debug\SodaMachine.pdb
+C:\Users\Chez\Desktop\CSharp\SodaMachine\SodaMachine\SodaMachine\obj\Debug\SodaMachine.csprojResolveAssemblyReference.cache
+C:\Users\Chez\Desktop\CSharp\SodaMachine\SodaMachine\SodaMachine\obj\Debug\SodaMachine.exe
+C:\Users\Chez\Desktop\CSharp\SodaMachine\SodaMachine\SodaMachine\obj\Debug\SodaMachine.pdb
