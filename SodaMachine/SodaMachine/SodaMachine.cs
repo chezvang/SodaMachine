@@ -137,8 +137,8 @@ namespace SodaMachine
                 change = amount - cost;
                 Console.WriteLine("\nYour change is: " + change);
                 DispenseChange(change);
-                prompt.CoinReturn(quarterCoin, dimeCoin, nickelCoin, pennyCoin);
                 Console.WriteLine("\nEnjoy your " + sodaChoice + " soda!");
+                InventoryCheck();
             }
             else
             {
@@ -149,6 +149,7 @@ namespace SodaMachine
                 else
                 {
                     Console.WriteLine("\nExact price detected. Enjoy your " + sodaChoice + " soda!");
+                    inventory.SubtractInventory(sodaChoice);
                 }
             }
         }
@@ -163,7 +164,7 @@ namespace SodaMachine
         {
             while(dispenseCoin < changeCoin)
             {
-                dispenseCoin += quarter.QuarterValue() + .01;
+                dispenseCoin += quarter.QuarterValue() +.01;
                 quarter.SubtractQuarter();
                 quarterCoin++;
                 if(dispenseCoin > changeCoin)
@@ -205,6 +206,12 @@ namespace SodaMachine
                     }
                 }
             }
+        }
+
+        public void InventoryCheck()
+        {
+            inventory.InventoryCheck(sodaChoice);
+            prompt.CoinReturn(quarterEnter, dimeEnter, nickelEnter, pennyEnter);
         }
 
         public void ActivateSodaMachine()
