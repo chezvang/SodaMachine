@@ -129,7 +129,6 @@ namespace SodaMachine
             }
         }
 
-
         public void CheckChange()
         {
             if (amount > cost)
@@ -164,13 +163,13 @@ namespace SodaMachine
         {
             while(dispenseCoin < changeCoin)
             {
-                dispenseCoin += quarter.QuarterValue() +.01;
+                dispenseCoin += quarter.QuarterValue();
                 quarter.SubtractQuarter();
                 quarterCoin++;
                 if(dispenseCoin > changeCoin)
                 {
                     quarterCoin--;
-                    dispenseCoin -= quarter.QuarterValue();
+                    dispenseCoin -= quarter.QuarterValue() + .01;
                     quarter.AddQuarter();
 
                     dispenseCoin += dime.DimeValue();
@@ -211,6 +210,18 @@ namespace SodaMachine
         public void InventoryCheck()
         {
             inventory.InventoryCheck(sodaChoice);
+            prompt.CoinReturn(quarterEnter, dimeEnter, nickelEnter, pennyEnter);
+        }
+
+        public void CoinChecker()
+        {
+            penny.PennyCheck();
+            prompt.CoinReturn(quarterEnter, dimeEnter, nickelEnter, pennyEnter);
+            nickel.NickelCheck();
+            prompt.CoinReturn(quarterEnter, dimeEnter, nickelEnter, pennyEnter);
+            dime.DimeCheck();
+            prompt.CoinReturn(quarterEnter, dimeEnter, nickelEnter, pennyEnter);
+            quarter.QuarterCheck();
             prompt.CoinReturn(quarterEnter, dimeEnter, nickelEnter, pennyEnter);
         }
 

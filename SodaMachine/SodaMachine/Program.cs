@@ -13,6 +13,7 @@ namespace SodaMachine
             SodaMachine machine = new SodaMachine();
 
             machine.ActivateSodaMachine();
+
             Console.ReadKey();
 
         }

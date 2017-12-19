@@ -25,5 +25,13 @@ namespace SodaMachine
         {
             dime = dime - 1;
         }
+
+        public void DimeCheck()
+        {
+            if (dime <= 0)
+            {
+                Console.WriteLine("Sorry, there are not enough dimes in the machine to dispense.");
+            }
+        }
     }
 }

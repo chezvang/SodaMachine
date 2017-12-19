@@ -25,5 +25,13 @@ namespace SodaMachine
         {
             nickel = nickel - 1;
         }
+
+        public void NickelCheck()
+        {
+            if (nickel <= 0)
+            {
+                Console.WriteLine("Sorry, there are not enough nickels in the machine to dispense.");
+            }
+        }
     }
 }

@@ -25,5 +25,13 @@ namespace SodaMachine
         {
             quarter = quarter - 1;
         }
+
+        public void QuarterCheck()
+        {
+            if (quarter <= 0)
+            {
+                Console.WriteLine("Sorry, there are not enough quarters in the machine to dispense.");
+            }
+        }
     }
 }

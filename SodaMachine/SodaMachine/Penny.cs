@@ -26,5 +26,13 @@ namespace SodaMachine
         {
             penny = penny - 1;
         }
+
+        public void PennyCheck()
+        {
+            if(penny <= 0)
+            {
+                Console.WriteLine("Sorry, there are not enough pennies in the machine to dispense.");
+            }
+        }
     }
 }
